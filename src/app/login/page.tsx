@@ -90,11 +90,11 @@ export default async function LoginPage({
             </label>
 
             <input
-  id="email"
-  name="email"
-  type="email"
-  autoComplete="email"
-  placeholder="nome@exemplo.pt"
+  id="password"
+  name="password"
+  type="password"
+  autoComplete="current-password"
+  placeholder="A tua palavra-passe"
   required
   style={{
     display: "block",
@@ -116,13 +116,18 @@ export default async function LoginPage({
             type="submit"
             style={{
               width: "100%",
-              padding: "12px",
+              padding: "12px 16px",
+              border: "none",
+              borderRadius: "8px",
+              backgroundColor: "#111827",
+              color: "#ffffff",
               cursor: "pointer",
-              fontWeight: "bold",
-            }}
-          >
-            Entrar
-          </button>
+              fontSize: "16px",
+              fontWeight: 700,
+              }}
+            >
+              Entrar
+            </button>
         </form>
 
         <p style={{ marginBottom: 0, marginTop: "24px" }}>

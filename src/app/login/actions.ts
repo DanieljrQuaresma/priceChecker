@@ -26,8 +26,15 @@ export async function login(formData: FormData) {
   });
 
   if (error) {
-    redirect("/login?error=Email ou palavra-passe incorretos.");
-  }
+  console.error("ERRO LOGIN SUPABASE:", {
+    message: error.message,
+    code: error.code,
+    status: error.status,
+    name: error.name,
+  });
+
+  redirect("/login?error=Email ou palavra-passe incorretos.");
+}
 
   revalidatePath("/", "layout");
   redirect("/admin");
