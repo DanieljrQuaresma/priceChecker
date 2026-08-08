@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/server";
 
 type Product = {
   id: number;
@@ -33,6 +33,7 @@ const euroFormatter = new Intl.NumberFormat("pt-PT", {
 });
 
 export default async function Home() {
+  const supabase = await createClient();
   const { data, error } = await supabase
     .from("product_prices")
     .select(`
